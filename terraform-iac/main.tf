@@ -15,6 +15,8 @@ resource "google_compute_firewall" "default" {
     protocol = "tcp"
     ports    = ["22", "80", "443"]
   }
+
+  source_ranges = ["0.0.0.0/0"] 
 }
 
 resource "google_compute_instance" "k3s_instance" {
